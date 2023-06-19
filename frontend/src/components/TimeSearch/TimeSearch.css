@@ -1,0 +1,13 @@
+@media screen and (max-width: 768px) {
+    .time-search form {
+        display: flex;
+        flex-direction: column!important;
+        align-items: center;
+        justify-content: center;
+        margin: 0!important;
+    }
+
+    .time-search input {
+        margin: 10px 0!important;
+    }
+}

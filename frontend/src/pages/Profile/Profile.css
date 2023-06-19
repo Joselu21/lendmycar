@@ -1,0 +1,24 @@
+.profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto 10px auto;
+    display: block;
+}
+
+.profile-card {
+    border: none;
+}
+
+.profile-card input {
+    border: none;
+    border-bottom: 1px solid #3984bf;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.profile-card input:focus {
+    outline: none;
+}

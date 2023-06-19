@@ -1,0 +1,68 @@
+.auth-popup form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.auth-popup label {
+    margin: 0px 10px 5px 10px;
+}
+
+.auth-popup input[type="email"],
+.auth-popup input[type="password"] {
+    margin: 5px 0px 10px 0px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+}
+
+.auth-popup button[type="submit"] {
+    margin: 15px 0 0 0;
+    padding: 10px;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    background-color: #3984bf;
+    cursor: pointer;
+}
+
+.auth-popup button[type="submit"]:hover {
+    background-color: #ffffff;
+    color: #000000;
+    outline: 1px solid #000000;
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 20px;
+    border: none;
+    text-align: center;
+}
+
+.modal-header button {
+    position: absolute;
+    top: 10;
+    right: 20px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.separator hr {
+    width: 40%;
+    margin: 0;
+    margin: 0 30px;
+}

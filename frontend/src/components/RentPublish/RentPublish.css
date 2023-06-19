@@ -1,0 +1,23 @@
+.publish-accordion {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 800px;
+    padding-bottom: 70px;
+}
+
+.h3-title {
+    margin: 20px 0;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #3984bf;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.publish-accordion h2 button{
+    margin: 0;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}

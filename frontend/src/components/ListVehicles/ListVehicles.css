@@ -1,0 +1,42 @@
+.vehicle-card {
+    max-width: 300px;
+}
+
+.add-button {
+    padding: 8px;
+    border: 1px solid #3984bf;
+    border-radius: 5px;
+    color: #3984bf;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.add-button:hover {
+    color: #fff;
+    background-color: #3984bf;
+}
+
+.delete-button
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px;
+    border: 1px solid #3984bf;
+    border-radius: 5px;
+    color: #3984bf;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.delete-button:hover {
+    color: #fff;
+    background-color: #3984bf;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #fff;
+    border-color: #3984bf;
+}

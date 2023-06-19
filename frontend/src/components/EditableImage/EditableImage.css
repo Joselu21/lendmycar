@@ -1,0 +1,26 @@
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    margin: 5px 0!important;
+    cursor: pointer;
+}
+
+.edit-icon {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: 4%;
+}
+
+.editable-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid #3984bf;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}

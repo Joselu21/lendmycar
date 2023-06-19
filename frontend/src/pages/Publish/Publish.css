@@ -1,0 +1,14 @@
+.publish-option {
+    border: 1px solid #3984bf;
+    color: #3984bf;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 100%;
+    background-color: rgb(244, 244, 244);
+    transition: all 0.25s ease-in-out;
+}
+
+.publish-option:hover {
+    background-color: #3984bf;
+    color: white;
+}

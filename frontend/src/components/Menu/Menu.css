@@ -1,0 +1,100 @@
+.menu {
+    display: flex;
+    max-height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 0px;
+    z-index: 1000;
+}
+
+.menu .navbar-brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #3984bf;
+}
+
+.menu .navbar-brand img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+.menu .nav-item {
+    margin: 0 7px;
+}
+
+.navbar-nav svg {
+    height: 20px;
+    width: 20px;
+}
+
+.nav-elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.search-container, .publish-container, .log-in-container, .sign-up-container {
+    height: 40px;
+}
+
+.search-button, .publish-button, .log-in-button, .sign-up-button {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #3984bf;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.search-button:hover, .publish-button:hover, .log-in-button:hover, .sign-up-button:hover {
+    color: white;
+    background-color: #3984bf;
+}
+
+.log-in-button img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 1rem;
+        box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .menu .navbar-brand {
+        display: none;
+    }
+
+    .menu .nav-elements {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .menu .nav-elements .nav-item button{
+        border-radius: 50%;
+    }
+    
+}

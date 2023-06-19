@@ -1,0 +1,63 @@
+{
+    "name": "lend_my_car",
+    "version": "1.0.0",
+    "description": "Aplicación multiplataforma para el alquiler de vehículos entre particulares",
+    "main": "index.js",
+    "scripts": {
+        "start": "cross-env NODE_ENV=development node --trace-warnings index.js",
+        "production": "cross-env NODE_ENV=production node index.js",
+        "start:seed": "cross-env NODE_ENV=development node --trace-warnings index.js --seed",
+        "test": "cross-env NODE_ENV=test mocha --seed",
+        "coverage": "cross-env NODE_ENV=test nyc --include 'app/**/*controller.js' mocha",
+        "documentation": "cross-env NODE_ENV=documentation node doc/generate-docs.js",
+        "pm2": "cross-env NODE_ENV=production pm2 start index.js --name lend_my_car",
+        "eslint": "eslint **/*.js",
+        "eslint:fix": "eslint --fix **/*.js"
+    },
+    "author": "Jose Luis Silvestre Garcia",
+    "license": "ISC",
+    "dependencies": {
+        "@mongodb-js/zstd": "^1.1.0",
+        "axios": "^1.4.0",
+        "config": "^3.3.9",
+        "cors": "^2.8.5",
+        "cross-env": "^7.0.0",
+        "express": "^4.18.2",
+        "firebase": "^9.22.1",
+        "firebase-admin": "^11.9.0",
+        "helmet": "^6.0.1",
+        "jsonwebtoken": "^9.0.0",
+        "kainda": "^7.2.0",
+        "module-alias": "^2.2.2",
+        "mongoose": "^7.0.3",
+        "mongoose-aggregate-paginate-v2": "^1.0.6",
+        "mongoose-autopopulate": "^1.0.1",
+        "mongoose-paginate-v2": "^1.7.1",
+        "winston": "^3.8.2"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "eslint": "^8.42.0",
+        "eslint-plugin-node": "^11.1.0",
+        "mocha": "^10.2.0",
+        "nyc": "^15.1.0",
+        "supertest": "^6.3.0",
+        "swagger-ui-express": "^4.6.2"
+    },
+    "mocha": {
+        "require": [
+            "./app/test/mocha.setup.js"
+        ],
+        "spec": "./app/**/*.test.js",
+        "recursive": true,
+        "timeout": 1000000,
+        "exit": true
+    },
+    "_moduleAliases": {
+        "@": "./",
+        "@app": "./app",
+        "@entities": "./app/entities",
+        "@services": "./app/services",
+        "@test": "./app/test"
+    }
+}

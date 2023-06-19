@@ -1,0 +1,44 @@
+{
+    "server": {
+        "host": "0.0.0.0",
+        "port": 3001
+    },
+    "cors": {
+        "origin": "*",
+        "methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
+    },
+    "jwt": {
+        "secret": "",
+        "expiresIn": "1h"
+    },
+    "cloudflare": {
+        "images": {
+            "api_email": "servicio-informatico@suarte.art",
+            "account_id": "8bfcce95eaec9d6a338faee1d5307cfe",
+            "account_hash": "hAeIC__6Aj746x0RFU1joA",
+            "api_key": "d9651c2124a9f223bd2fc1571139471375ad4"
+        }
+    },
+    "firebase": {
+        "apiKey": "AIzaSyALHS4ow0DI4nWAYD7D2ne_DEPSkIlzDuY",
+        "authDomain": "lendmycar-d7528.firebaseapp.com",
+        "projectId": "lendmycar-d7528",
+        "storageBucket": "lendmycar-d7528.appspot.com",
+        "messagingSenderId": "401998479678",
+        "appId": "1:401998479678:web:460631f6e84a7e9f98ec6f",
+        "measurementId": "G-TBXNSHM83S"
+    },
+    "firebase-admin": {
+        "type": "service_account",
+        "project_id": "lendmycar-d7528",
+        "private_key_id": "63d534d062df745f088af459959d2bdefbfea304",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDOwCP65dPQpImE\ntoNe1ce20OEyMwx3sepMpvyMJflBd4keVEwm0/oTtTVMlWoOTMXzhDoPZklQmmoa\nqHFomtv3T0RsIq3uMuCkMaO5teJhOF/6vpbigyub+TkJLiHVtpittV7DnRpNAJer\nxaPgoiyA3yP1yAmBTBp9OdYNG8AM5nrsLRtNcvWKk5zKRWzUM91JSV4CyeCakPNc\nMVl7rZZ4+zDZaxu8tZkxoppQaCs3cpst1RE0PCgOP0Nfm+uJWpewQGKmxcgak93W\ncwaWtTUoVXN9hD5GNcUf4Avr8xHeUsZx6dmiCaKRR8CeeuKOAoK8MbIKJeu5MG6W\nNCloKurbAgMBAAECggEACh6IuaCtblqEnz9DoiJP2m3SJ9/XGLYCOWrkP4PNoFur\nwBVGKOcFKBkdbmMobrdpP5MAOH1m0eV3k1hykePKfQn0gl/BfZV16J4ZXQnpoPKJ\nGBUN/jDcszn5MFmBWcbMeuwT+E+52CeoRMWxUK7/WKC9+itRSR0iysWdlBoAm2Dx\n9AgNI82RBEsWTavraTmPKMjMYRQSo3JC1N2sF5h+PkwZh7SNpku4kDVmCbwEUczf\n1s3mSDT3P3JxtG+zWssbBfw7hxqrkkQDr8zguL4SBJPgHyF+W7RQl4zl7cB8laQT\nfaPzqVLvXmZweLtx//5pr13G7CPR2OPVqiObO6gMIQKBgQD2NBIMVGvzeShaLavY\nJymJXcLD690OSuSXrw74Ea+eCOFCGD9AoCJ7fpSXU1I2bTYAWIpA+GcTGyTs60oG\nR/jSuX3SAdaZl9ZaAy7egfV1uuQznlsYcQODOIa5dFZMBDu3NTknJ3ZAEMQA+l5S\npYwg95KrIjOFOIBluxeqEqTsKwKBgQDW+i/f+h1sELgRhZ+xXnUpP4O+CjncD0aN\nmZFKntvMbUEGr6jw8CUSKM1ma3T6QhgUx7FBIMizqAcDCYDdyzOZ8JFV0y5WGdn1\nD+cIAGoUL5ldNtkdHirrALBhw+cuVooAEcVew5Rrks5hSxrT5Y5uE4PlQozpR314\nq4zddfu0EQKBgFHrNW4g0OJsF78ZnyoGrc1lAx8JZb4RsUm/F632xIZC0iCZzMIG\nBjMtBOfs81fksqkezLGddT5oM7sY9sJsRCBpU7ICppLocIv2ryud9jw7+R4rvIe/\nYrnQnxMp4GTeq7fj36ZlfPUIHw9sPuIk7yEw/v4uHRJgoGg4/kC6f2GNAoGAatnD\nffHVOec9dggSjZhDZ5MYKhbvFz/Ic40GuC4pVXxgO7CHqenSoyoAnY1/gPvk+D8h\nDRv8Zb94bLwGfzcGmNcHhb8HYuhKexHCZSm/j/Twp3Ihi+V4s4GOKamzeEavJMWw\nch+H38gCKD2qQfPxTSkJ/6OKYlCUPqwVweVoi+ECgYEAtheCJT4Ap+RKzZSvVVcH\nIiY3kI6ARARzrcq8JSDnYqs0K/9juhzPx1eDQ7UZ2Ys12evWDTnFqxhCOL/VopQA\nSRJu8ZPKPuhAQVwSpvH2Ir4lPxBVdCtDEqe6OaMT4Ls0EQTGGDtGhc50CLhE40s0\nV5NeNaQpQvArTU4Ygc4IdVo=\n-----END PRIVATE KEY-----\n",
+        "client_email": "firebase-adminsdk-8sisa@lendmycar-d7528.iam.gserviceaccount.com",
+        "client_id": "113997580657391153690",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-8sisa%40lendmycar-d7528.iam.gserviceaccount.com",
+        "universe_domain": "googleapis.com"
+    }
+}

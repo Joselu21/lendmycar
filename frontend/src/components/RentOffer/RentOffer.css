@@ -1,0 +1,33 @@
+.rent-offer-container .user-image {
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #3984bf;
+    margin-bottom: 10px;
+}
+
+.offer-description {
+    width: 100%;
+    padding: 10px;
+    text-align: justify;
+}
+
+.offer-location {
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .offer-description {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .react-datepicker__input-container input {
+        width: 100%!important;
+    }
+}

@@ -1,0 +1,12 @@
+.btn .btn-primary {
+    color: #fff;
+    background-color: #3984bf;
+    border-color: #3984bf;
+}
+
+.react-datepicker__input-container input {
+    width: 100%;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 0.35rem 0.75rem;
+}

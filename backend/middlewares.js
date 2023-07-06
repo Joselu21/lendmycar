@@ -1,9 +1,9 @@
 const LogService = require("@services/log.service");
 const express = require("express");
 const kainda = require("kainda");
-const helmet = require("helmet");
+// const helmet = require("helmet");
 const config = require("config");
-const cors = require("cors");
+// const cors = require("cors");
 
 function setupMiddlewares(app) 
 {
@@ -22,8 +22,8 @@ function setupMiddlewares(app)
     /**
      * Some middlewares added on initial configuration. These middlewares will execute once the petition reaches the server side.
      */
-    app.use(helmet());
-    app.use(cors(corsOptions));
+    // app.use(helmet());
+    // app.use(cors(corsOptions));
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
 

@@ -15,8 +15,8 @@ function setupMiddlewares(app)
      */
     let whitelist = config.get("cors.origin") ?? [];
     let corsOptions = {
-        origin: whitelist,
-        methods: config.get("cors.methods")
+        origin: "lendmycar.jlsg.es",
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     };
 
     /**

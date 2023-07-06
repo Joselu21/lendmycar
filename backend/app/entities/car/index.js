@@ -21,7 +21,6 @@ Car.updateable_keys = [
     "car_image"
 ];
 
-// TODO: Change this when not needed
 Car.seed_options = {
     seed : false,
     dependencies: [

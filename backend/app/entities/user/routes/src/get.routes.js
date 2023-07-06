@@ -9,7 +9,7 @@ module.exports = {
 
         const User = ModelsService.Models.User;
 
-        // Get all users. // TODO: Secure this route, only admins should use it.
+        // Get all users.
         app.get(
             "/user/",
             [

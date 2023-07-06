@@ -9,7 +9,7 @@ function _getPipeline(lat, lon, indexName, maxDistance, query, fieldName)
         $geoNear: {
             near: {
                 type: "Point",
-                coordinates: [lon, lat]
+                coordinates: [lat, lon]
             },
             distanceField: "distance",
             key: indexName,
@@ -60,6 +60,7 @@ async function searchRent(req, res)
             lon = parseFloat(req.query.lon);
             maxDistance = req.query.maxDistance ? parseFloat(req.query.maxDistance) : maxDistance;
         }
+
         let pipeline = _getPipeline(lat, lon, "location", maxDistance, {
             "offer_status": "available",
         }, "distance_km");
@@ -121,8 +122,14 @@ async function searchShare(req, res)
             lonEnd = parseFloat(req.query.lonEnd);
         }
 
+        req.query.date = req.query.date ? new Date(parseInt(req.query.date)) : new Date();
+        req.query.date.setHours(0, 0, 0, 0);
         let pipeline = _getPipeline(latStart, lonStart, "offer_start_location", maxDistance, {
             "offer_status": "available",
+            "offer_start_date": {
+                $gte: req.query.date,
+                $lte: new Date(new Date(req.query.date).setDate(new Date(req.query.date).getDate() + 2))
+            }
         }, "distance_start_km");
 
         let aggregatePipeline = Share.subModel.aggregate(pipeline);
@@ -144,7 +151,9 @@ async function searchShare(req, res)
             await tmp.populate("car");
             await tmp.populate("user");
             tmp = tmp.toJSON();
-            tmp.distance_end_km = doc.distance_km;
+            const tmp2 = response.docs.find(doc2 => doc2._id.toString() === doc._id.toString());
+            tmp.distance_start_km = tmp2.distance_start_km;
+            tmp.distance_end_km = doc.distance_end_km;
             return tmp;
         }));
         return res.status(200).json(response2);

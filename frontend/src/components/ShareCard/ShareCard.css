@@ -1,0 +1,76 @@
+.share-card {
+    flex-direction: row;
+    text-align: justify;
+    margin: 8px;
+}
+
+.share-card .card-header {
+    width: 30%;
+    min-width: 25%;
+    min-height: 100%;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.share-card .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    padding: 0;
+    border: none;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.car-image {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.share-card .price-div {
+    width: 70%;
+    border: none;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+}
+
+.price-div p {
+    margin: 0;
+    padding: 0;
+}
+
+.distance {
+    font-size: 0.9rem;
+    color: #999;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .share-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .share-card .card-header {
+        width: 100%;
+        height: 30%;
+        border-radius: 10px;
+    }
+
+    .share-card .price-div {
+        width: 70%;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 10px;
+    }
+}

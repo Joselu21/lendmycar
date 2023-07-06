@@ -58,7 +58,7 @@ const ListRent = () =>
                             location={location}
                             setLocation={setLocation}
                         />
-                        <Button variant="primary" className="mt-3" onClick={handleSearch}>
+                        <Button variant="primary" className="my-3" onClick={handleSearch}>
                             Search
                         </Button>
                     </Col>

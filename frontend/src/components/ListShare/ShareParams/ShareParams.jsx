@@ -5,15 +5,11 @@ import { IoFilter } from "react-icons/io5";
 import SelectLocation from "../../SelectLocation/SelectLocation";
 import DatePicker from "react-datepicker";
 
-const ShareParams = ({ maxDistance, setMaxDistance, location, setLocation, date, setDate }) =>
+const ShareParams = ({ maxDistance, setMaxDistance, origin, setOrigin, destination, setDestination, date, setDate }) =>
 {
 
-    const [show, setShow] = React.useState(false);
-
-    function handleSelectLocation()
-    {
-        setShow(true);
-    };
+    const [showOrigin, setShowOrigin] = React.useState(false);
+    const [showDestination, setShowDestination] = React.useState(false);
 
     return (<>
         <div className="d-flex flex-row align-items-center justify-content-center my-3">
@@ -22,26 +18,48 @@ const ShareParams = ({ maxDistance, setMaxDistance, location, setLocation, date,
                 Filters
             </h4>
         </div>
-        <h5>Destination</h5>
+        <h5>Origin</h5>
         <input type="text" className="form-control my-1" placeholder={
-            location[0] === 0 && location[1] === 0 ?
-                "Where are you going?" :
-                location
-        } onChange={(e) => setLocation(e.target.value)} />
+            origin[0] === 0 && origin[1] === 0 ?
+                "Where are you?" :
+                origin
+        } onChange={(e) => setOrigin(e.target.value)} />
         <div className="d-flex flex-row align-items-center justify-content-center mb-3">
             <MdAddLocationAlt className="text-primary" />
             <Button
                 variant="outline"
                 className="use-current-location"
-                onClick={handleSelectLocation}
+                onClick={(e) => setShowOrigin(true)}
             >
-                Select location
+                Select origin
             </Button>
             <SelectLocation
-                show={show}
-                onHide={() => setShow(false)}
-                location={location}
-                setLocation={setLocation}
+                show={showOrigin}
+                onHide={() => setShowOrigin(false)}
+                location={origin}
+                setLocation={setOrigin}
+            ></SelectLocation>
+        </div>
+        <h5>Destination</h5>
+        <input type="text" className="form-control my-1" placeholder={
+            destination[0] === 0 && destination[1] === 0 ?
+                "Where are you going?" :
+                destination
+        } onChange={(e) => setDestination(e.target.value)} />
+        <div className="d-flex flex-row align-items-center justify-content-center mb-3">
+            <MdAddLocationAlt className="text-primary" />
+            <Button
+                variant="outline"
+                className="use-current-location"
+                onClick={(e) => setShowDestination(true)}
+            >
+                Select destination
+            </Button>
+            <SelectLocation
+                show={showDestination}
+                onHide={() => setShowDestination(false)}
+                location={destination}
+                setLocation={setDestination}
             ></SelectLocation>
         </div>
         <h5>Max distance</h5>

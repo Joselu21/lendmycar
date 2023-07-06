@@ -10,17 +10,14 @@ Offer.Validators = require("@entities/offer/validators");
 /**
  * VARIABLES
 */
-// TODO: Fill this
 Offer.create_required_keys = [
 
 ];
 
-// TODO: Fill this
 Offer.updateable_keys = [
 
 ];
 
-// TODO: Change this when not needed
 Offer.seed_options = {
     seed : false,
     dependencies: [

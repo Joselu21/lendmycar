@@ -9,11 +9,10 @@ module.exports = {
 
         const Reservation = ModelsService.Models.Reservation;
 
-        // Get all reservations. // TODO: Secure this route, only admins should use it.
+        // Get all reservations.
         app.get(
-            "/reservation/",
+            "/reservation/me",
             [
-                deactivateRoute,
                 tokenValid,
             ],
             Reservation.Controller.getAllReservations

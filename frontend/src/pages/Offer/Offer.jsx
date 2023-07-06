@@ -3,6 +3,7 @@ import "./Offer.css";
 import { useParams } from "react-router-dom";
 import OfferService from "../../services/offer.service";
 import RentOffer from "../../components/RentOffer/RentOffer";
+import ShareOffer from "../../components/ShareOffer/ShareOffer";
 
 const Offer = () =>
 {
@@ -31,9 +32,7 @@ const Offer = () =>
             offer && offer.__t === "Rent" ?
                 <RentOffer offer={offer} />
                 :
-                <div className="offer">
-                    Es una share offer
-                </div>
+                <ShareOffer offer={offer} />
         }
     </>
     );

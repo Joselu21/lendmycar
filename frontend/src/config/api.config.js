@@ -1,7 +1,7 @@
 const apiConfig = {
-    protocol: 'http',
-    host: 'localhost',
-    port: 3001,
+    protocol: process.env.NODE_ENV === 'production' ? 'https' : 'https',
+    host: process.env.NODE_ENV === 'production' ? 'tfg.jlsg.es' : 'joselu.suarte.art',
+    port: process.env.NODE_ENV === 'production' ? 443 : 443,
     endpoints: {
         "loginGoogle": "login/google",
         "login": "login",
@@ -17,6 +17,9 @@ const apiConfig = {
         "getMyOffers": "offer/me",
         "createOffer": "offer",
         "deleteOffer": "offer",
+        "getMyReservations": "reservation/me",
+        "createReservation": "reservation",
+        "deleteReservation": "reservation"
     }
 };
 

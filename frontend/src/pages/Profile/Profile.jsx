@@ -13,6 +13,7 @@ import OfferService from "../../services/offer.service";
 import RentCard from "../../components/RentCard/RentCard";
 import ShareCard from "../../components/ShareCard/ShareCard";
 import UserPlaceholder from "../../assets/UsuarioPlaceholder.png";
+import ReservationService from "../../services/reservation.service";
 
 const Profile = () =>
 {
@@ -65,6 +66,8 @@ const Profile = () =>
 
     // My offers
     const [myOffers, setMyOffers] = useState([]);
+    // My reservations
+    const [myReservations, setMyReservations] = useState([]);
 
     useEffect(() =>
     {
@@ -80,7 +83,20 @@ const Profile = () =>
                 console.log(error);
             }
         };
+        const getMyReservations = async () =>
+        {
+            try
+            {
+                const response = await ReservationService.getMyReservations(user_id);
+                setMyReservations(response.data);
+            }
+            catch (error)
+            {
+                console.log(error);
+            }
+        };
         getMyOffers();
+        getMyReservations();
     }, [user_id]);
 
 
@@ -177,6 +193,61 @@ const Profile = () =>
                                 })
                             }
                         </Row>
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
+            <Accordion className="mb-5">
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header className="space-around text-center">
+                        <h5 className="w-100 text-center m-0">
+                            My reservations
+                        </h5>
+                    </Accordion.Header>
+                    <Accordion.Body className="text-center">
+                            <Row>
+                                {
+                                    myReservations && myReservations.length === 0 &&
+                                    <Col className="mt-3">
+                                        <p className="text-center">
+                                            You don't have any reservations yet
+                                        </p>
+                                        <Button className="mt-3" variant="outline-primary" onClick={() => navigate("/search")}>
+                                            Search for an offer
+                                        </Button>
+                                    </Col>
+                                }
+                                {
+                                    myReservations && myReservations.length > 0 &&
+                                    myReservations.map((reservation, index) =>
+                                    {
+                                        console.log(reservation);
+                                        if (reservation.offer.__t === "Share")
+                                        {
+                                            return (
+                                                <Col key={index} className="mt-3">
+                                                    <ShareCard
+                                                        offer={reservation.offer}
+                                                        isEditable={isProfileEditable}
+                                                        reservation={reservation}
+                                                    />
+                                                </Col>
+                                            );
+                                        }
+                                        else
+                                        {
+                                            return (
+                                                <Col key={index} className="mt-3">
+                                                    <RentCard
+                                                        offer={reservation.offer}
+                                                        isEditable={isProfileEditable}
+                                                        reservation={reservation}
+                                                    />
+                                                </Col>
+                                            );
+                                        }
+                                    })
+                                }
+                            </Row>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

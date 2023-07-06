@@ -10,17 +10,14 @@ Reservation.Validators = require("@entities/reservation/validators");
 /**
  * VARIABLES
 */
-// TODO: Fill this
 Reservation.create_required_keys = [
-
+    "offer"
 ];
 
-// TODO: Fill this
 Reservation.updateable_keys = [
 
 ];
 
-// TODO: Change this when not needed
 Reservation.seed_options = {
     seed : false,
     dependencies: [

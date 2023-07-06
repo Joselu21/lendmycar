@@ -14,20 +14,10 @@ async function getAllReservations(req, res)
     const Reservation = ModelsService.Models.Reservation;
     try 
     {
-        const filterableKeys = [];
-        const filterQuery = {};
-        filterableKeys.forEach(key => 
-        {
-            if (req.query[key]) 
-            {
-                filterQuery[key] = req.query[key]; 
-            } 
+        const reservations = await Reservation.findMany({
+            user : req.token_decoded.uid
         });
-        const response = await Reservation.findPaginated(filterQuery, req.query);
-        return res.status(200).json({
-            ...response,
-            data: response.data.map(reservation => reservation.toJSON()),
-        });
+        return res.status(200).json(reservations);
     }
     catch (error) 
     {

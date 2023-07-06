@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { MdCarRental, MdPeopleAlt } from "react-icons/md";
 import RentPublish from "../../components/RentPublish/RentPublish";
+import SharePublish from "../../components/SharePublish/SharePublish";
 import "./Publish.css";
 
 const Publish = () =>
@@ -53,9 +54,12 @@ const Publish = () =>
                     />
                     :
                     publishOption === "share" ?
-                        <h1>Share</h1>
+                        <SharePublish
+                            setPublishOption={setPublishOption}
+                        />
                         :
                         null
+                        
             }
         </Container>
     );

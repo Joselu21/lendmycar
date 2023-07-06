@@ -5,8 +5,9 @@ import { CloseButton } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import OfferService from "../../services/offer.service";
 import CochePlaceholder from "../../assets/CochePlaceholder.png";
+import ReservationService from "../../services/reservation.service";
 
-const RentCard = ({ offer, isEditable }) =>
+const RentCard = ({ offer, isEditable, reservation }) =>
 {
 
     const navigate = useNavigate();
@@ -15,7 +16,10 @@ const RentCard = ({ offer, isEditable }) =>
     {
         try
         {
-            await OfferService.deleteOffer(offer._id);
+            if(!reservation)
+                await OfferService.deleteOffer(offer._id);
+            else
+                await ReservationService.deleteReservation(reservation._id);
             window.location.reload();
         }
         catch (error)
@@ -67,7 +71,7 @@ const RentCard = ({ offer, isEditable }) =>
                         {
                             !isEditable && offer?.offer_price &&
                             <p className="text-right m-3">
-                                {offer?.offer_price.price_per_day}€/day
+                                {offer?.offer_price}€/day
                             </p>
                         }
                         <Button variant="primary" onClick={() => navigate(`/search/rent/${offer._id}`)}>

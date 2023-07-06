@@ -40,9 +40,9 @@ async function logInGoogle(req, res)
     try 
     {
         // We verify the token with Firebase
-        const decoded_token = await AuthService.verifyFirebaseAccessToken(req.body._tokenResponse.idToken);
+        const decoded_token = await AuthService.verifyFirebaseAccessToken(req.body.token);
         const user_id = decoded_token.uid;
-        const user_email = decoded_token.email ?? req.body.user.providerData[0].email;
+        const user_email = decoded_token.email ?? req.body.user_email?.toLowerCase();
         // We check if the user exists in our database
         let user = await User.findOne({ user_email: user_email }, { transaction });
         // If the user doesn't exist, we create it

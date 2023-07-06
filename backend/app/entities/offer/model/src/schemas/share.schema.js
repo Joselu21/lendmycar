@@ -13,8 +13,8 @@ const shareSchema = new mongoose.Schema({
         type : Date,
         required : true,
     },
-    offer_end_date : {
-        type : Date,
+    offer_seats: {
+        type : Number,
         required : true,
     },
     offer_start_location : {

@@ -32,9 +32,10 @@ async function registerOrLoginGoogle() {
     const user = await signInWithPopup(auth, googleProvider);
     console.log(user);
     return await requestCustomTokenAndLogin({
-        user_email: user.user.email,
+        user_email: user.user.email ?? user.user.providerData[0].email,
         user_name: user.user.displayName ?? "Usuario",
         user_id : user.user.uid,
+        token : user._tokenResponse.idToken,
     }, apiConfig.endpoints.loginGoogle);
 };
 

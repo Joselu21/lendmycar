@@ -14,7 +14,8 @@ const ListShare = () =>
     const [totalPages, setTotalPages] = useState(2);
 
     // SEARCH PARAMS
-    const [location, setLocation] = useState([0, 0]);
+    const [origin, setOrigin] = useState([0, 0]);
+    const [destination, setDestination] = useState([0, 0]);
     const [maxDistance, setMaxDistance] = useState(null);
     const [date, setDate] = useState(
         new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
@@ -30,10 +31,15 @@ const ListShare = () =>
                 maxDistance: maxDistance * 1000,
                 date: date.getTime()
             };
-            if (location[0] !== 0 && location[1] !== 0)
+            if (origin[0] !== 0 && origin[1] !== 0)
             {
-                params.lat = location[0];
-                params.lon = location[1];
+                params.latStart = origin[0];
+                params.lonStart = origin[1];
+            }
+            if (destination[0] !== 0 && destination[1] !== 0)
+            {
+                params.latEnd = destination[0];
+                params.lonEnd = destination[1];
             }
             const response = await OfferService.getShareOffers(params);
             setOffers(response.data.docs);
@@ -59,12 +65,14 @@ const ListShare = () =>
                         <ShareParams
                             maxDistance={maxDistance}
                             setMaxDistance={setMaxDistance}
-                            location={location}
-                            setLocation={setLocation}
+                            origin={origin}
+                            setOrigin={setOrigin}
+                            destination={destination}
+                            setDestination={setDestination}
                             date={date}
                             setDate={setDate}
                         />
-                        <Button variant="primary" className="mt-3" onClick={handleSearch}>
+                        <Button variant="primary" className="my-3" onClick={handleSearch}>
                             Search
                         </Button>
                     </Col>
